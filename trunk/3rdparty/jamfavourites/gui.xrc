@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf8"?>
+<resource>
+  <object class="wxFrame" name="JAMFAVOURITES">
+    <title>jamFavourites</title>
+    <object class="wxNotebook">
+      <size>400,230</size>
+      <object class="notebookpage">
+        <label>Favourite albums</label>
+        <object class="wxPanel">
+          <object class="wxBoxSizer">
+            <orient>wxHORIZONTAL</orient>
+            <object class="spacer">
+              <size>40,40</size>
+            </object>
+            <object class="sizeritem">
+              <object class="wxBoxSizer">
+                <orient>wxVERTICAL</orient>
+                <object class="sizeritem">
+                  <object class="wxStaticText">
+                    <label>Download the favourite albums of the user :</label>
+                  </object>
+                </object>
+                <object class="spacer">
+                  <size>5,5</size>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxTextCtrl" name="FAVOURITES_USER">
+                    <value>sylvinus</value>
+                    <size>200,20</size>
+                  </object>
+                </object>
+                <object class="spacer">
+                  <size>10,10</size>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxBoxSizer">
+                    <orient>wxHORIZONTAL</orient>
+                    <object class="sizeritem">
+                      <object class="wxStaticText">
+                        <label>In the audio format</label>
+                      </object>
+                    </object>
+                    <object class="spacer">
+                      <size>5,5</size>
+                    </object>
+                    <object class="sizeritem">
+                      <object class="wxChoice" name="FAVOURITES_AENC">
+                        <content>
+                          <item>MP3</item>
+                          <item>Ogg Vorbis q7</item>
+                        </content>
+                      </object>
+                    </object>
+                  </object>
+                </object>
+                <object class="spacer">
+                  <size>5,5</size>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxBoxSizer">
+                    <orient>wxHORIZONTAL</orient>
+                    <object class="sizeritem">
+                      <object class="wxStaticText" name="">
+                        <label>In the folder</label>
+                      </object>
+                    </object>
+                    <object class="spacer">
+                      <size>5,5</size>
+                    </object>
+                    <object class="sizeritem">
+                      <object class="wxTextCtrl" name="FAVOURITES_FOLDER"/>
+                    </object>
+                    <object class="spacer">
+                      <size>5,5</size>
+                    </object>
+                    <object class="sizeritem">
+                      <object class="wxButton" name="FAVOURITES_FOLDER_B">
+                        <label>Browse...</label>
+                      </object>
+                    </object>
+                  </object>
+                </object>
+                <object class="spacer">
+                  <size>5,5</size>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxButton" name="FAVOURITES_GO">
+                    <label>Go !</label>
+                  </object>
+                </object>
+                <object class="spacer">
+                  <size>20,20</size>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxStaticText" name="FAVOURITES_STATUS">
+                    <label>Press &quot;Go&quot; to start downloading</label>
+                  </object>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxGauge" name="FAVOURITES_GAUGE">
+                    <range>100</range>
+                    <size>300,30</size>
+                  </object>
+                </object>
+                <object class="spacer">
+                  <size>5,5</size>
+                </object>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+      <object class="notebookpage">
+        <label>Console</label>
+        <object class="wxPanel">
+          <object class="wxBoxSizer">
+            <orient>wxHORIZONTAL</orient>
+            <object class="sizeritem">
+              <object class="wxTextCtrl" name="CONSOLE">
+                <size>400,200</size>
+                <style>wxTE_MULTILINE</style>
+              </object>
+              <flag>wxEXPAND</flag>
+            </object>
+          </object>
+        </object>
+      </object>
+      <object class="notebookpage">
+        <label>About</label>
+        <object class="wxPanel">
+          <object class="wxBoxSizer">
+            <orient>wxVERTICAL</orient>
+            <object class="spacer">
+              <size>5,5</size>
+            </object>
+            <object class="sizeritem">
+              <object class="wxStaticText">
+                <label>JamFavourites 0.1\n\nDownload your favourite jamendo albums \n\nGo to www.jamendo.com, register and use the &quot;Star&quot; feature on the covers to add an album to your favourites \n\njamFavourites uses PyJamLib and is a GPL software developped by the Jamendo team</label>
+                <size>390,200</size>
+                <style></style>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+      <style></style>
+    </object>
+    <style>wxCAPTION|wxCLOSE_BOX|wxMAXIMIZE_BOX|wxMINIMIZE_BOX|wxFRAME_NO_TASKBAR</style>
+  </object>
+</resource>

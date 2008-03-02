@@ -1,0 +1,2 @@
+content jamendospy content/ 
+overlay chrome://browser/content/browser.xul chrome://jamendospy/content/jamendospyOverlay.xul

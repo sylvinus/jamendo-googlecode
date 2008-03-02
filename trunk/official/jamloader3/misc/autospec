@@ -1,0 +1,75 @@
+# Initial spec file created by autospec ver. 0.8 with rpm 3 compatibility
+Summary: dist
+# The Summary: line should be expanded to about here -----^
+#Summary(fr): (translated summary goes here)
+Name: jamloader
+Version: 2.9
+Release: 1
+Group: Applications/Internet
+#Group(fr): (translated group goes here)
+License: GPL 
+Source: http://jamloader-2.9.bin.tar.gz
+#NoSource: 0
+BuildRoot: %{_tmppath}/%{name}-root
+# Following are optional fields
+#URL: http://www.example.net/dist/
+#Distribution: Red Hat Contrib-Net
+#Patch: dist-%{version}.patch
+#Prefix: /jamloader-2.9.0
+#BuildArch: noarch
+#Requires: 
+#Obsoletes: 
+#BuildRequires: 
+
+%description
+dist version unknown
+
+#%description -l fr
+#(translated description goes here)
+
+%prep
+%setup -c dist
+#%patch
+
+%install
+%__cp -a . "${RPM_BUILD_ROOT-/}"
+
+%clean
+[ "$RPM_BUILD_ROOT" != "/" ] && rm -rf "$RPM_BUILD_ROOT"
+
+%files
+%defattr(-,root,root)
+%dir /jamloader-2.9.0/
+%dir /jamloader-2.9.0/src/
+/jamloader-2.9.0/src/jamloader3.py
+%dir /jamloader-2.9.0/misc/
+/jamloader-2.9.0/misc/Jamloader.desktop
+/jamloader-2.9.0/uninstall.sh
+%license /jamloader-2.9.0/LICENSE
+%readme /jamloader-2.9.0/README
+/jamloader-2.9.0/install.sh
+/jamloader-2.9.0/jamloader3.sh
+%dir /jamloader-2.9.0/locale/
+/jamloader-2.9.0/locale/fr_FR.qm
+/jamloader-2.9.0/locale/fr_FR.ts
+%dir /jamloader-2.9.0/ressources/
+/jamloader-2.9.0/ressources/icon_16.png
+/jamloader-2.9.0/ressources/mainWindow.py
+/jamloader-2.9.0/ressources/mainWindow.ui
+%dir /jamloader-2.9.0/pyjamlib/
+%dir /jamloader-2.9.0/pyjamlib/jamendo/
+%dir /jamloader-2.9.0/pyjamlib/jamendo/lib/
+/jamloader-2.9.0/pyjamlib/jamendo/lib/XMLRPC.py
+%dir /jamloader-2.9.0/pyjamlib/jamendo/lib/cdrip/
+/jamloader-2.9.0/pyjamlib/jamendo/lib/cdrip/cdparanoia_unix.py
+/jamloader-2.9.0/pyjamlib/jamendo/lib/cdrip/__init__.py
+/jamloader-2.9.0/pyjamlib/jamendo/lib/ContentUpload.py
+/jamloader-2.9.0/pyjamlib/jamendo/lib/LocalPlatform.py
+/jamloader-2.9.0/pyjamlib/jamendo/lib/Flac.py
+/jamloader-2.9.0/pyjamlib/jamendo/lib/__init__.py
+/jamloader-2.9.0/pyjamlib/jamendo/__init__.py
+%doc /jamloader-2.9.0/INSTALL
+
+%changelog
+* Thu Jul 12 2007  <max@XbuzZ_laptop>
+- Initial spec file created by autospec ver. 0.8 with rpm 3 compatibility
