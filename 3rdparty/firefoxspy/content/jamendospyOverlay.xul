@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<overlay id="jamendospyOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+
+
+<!-- Sidebar for Firefox -->
+<menupopup id="viewSidebarMenu">
+  <menuitem observes="viewJamendospySidebar"/>
+</menupopup>
+<script type="application/x-javascript" src="chrome://jamendospy/content/jamendospyOverlay.js">
+
+</script>
+
+<broadcasterset id="mainBroadcasterSet">
+    <broadcaster id="viewJamendospySidebar" autoCheck="false" label="Jamendo Spy"
+                 type="checkbox" group="sidebar"
+                 sidebarurl="http://www.jamendo.com/?p=spyfirefox"
+                 oncommand="jamendospy_togglesidebar();"/>
+</broadcasterset>
+
+
+
+</overlay>

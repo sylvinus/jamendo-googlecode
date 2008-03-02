@@ -1,0 +1,424 @@
+<?xml version="1.0" ?>
+<resource>
+  <object class="wxFrame" name="MainFrame">
+    <title>jamcorder</title>
+    <object class="wxBoxSizer">
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxStaticBitmap" name="GLOBAL_UPPERBITMAP">
+          <bitmap></bitmap>
+          <size>600,80</size>
+        </object>
+      </object>
+      <object class="sizeritem">
+        <object class="wxNotebook">
+          <object class="notebookpage">
+            <label>Live !</label>
+            <object class="wxPanel" name="PanelLive">
+              <object class="wxBoxSizer">
+                <orient>wxVERTICAL</orient>
+                <object class="spacer">
+                  <size>0,30</size>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxStaticBoxSizer">
+                    <label> Album infos </label>
+                    <orient>wxVERTICAL</orient>
+                    <object class="sizeritem">
+                      <object class="wxFlexGridSizer">
+                        <cols>2</cols>
+                        <rows>2</rows>
+                        <object class="spacer">
+                          <size>0,10</size>
+                        </object>
+                        <object class="spacer">
+                          <size>0,10</size>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxStaticText">
+                            <label>  Artist name    </label>
+                          </object>
+                          <flag>wxALIGN_CENTRE_VERTICAL</flag>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxTextCtrl" name="LIVE_ARTISTNAME">
+                            <size>400,20</size>
+                          </object>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxStaticText">
+                            <label>  Album name    </label>
+                          </object>
+                          <flag>wxALIGN_CENTRE_VERTICAL</flag>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxTextCtrl" name="LIVE_ALBUMNAME">
+                            <size>400,20</size>
+                          </object>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxStaticText">
+                            <label>  License URL    </label>
+                          </object>
+                          <flag>wxALIGN_CENTRE_VERTICAL</flag>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxTextCtrl" name="LIVE_LICENSEURL">
+                            <value>http://creativecommons.org/licenses/by-nc-sa/2.5/</value>
+                            <size>400,20</size>
+                          </object>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxStaticText">
+                            <label>  Comment    </label>
+                          </object>
+                          <flag>wxALIGN_CENTRE_VERTICAL</flag>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxTextCtrl" name="LIVE_COMMENT">
+                            <value>http://www.jamendo.com/</value>
+                            <size>400,20</size>
+                          </object>
+                        </object>
+                        <object class="spacer">
+                          <size>0,10</size>
+                        </object>
+                      </object>
+                    </object>
+                  </object>
+                  <flag>wxALIGN_CENTRE</flag>
+                </object>
+                <object class="spacer">
+                  <size>0,30</size>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxStaticBoxSizer">
+                    <label> Track infos </label>
+                    <orient>wxVERTICAL</orient>
+                    <object class="sizeritem">
+                      <object class="wxFlexGridSizer">
+                        <cols>2</cols>
+                        <rows>2</rows>
+                        <object class="spacer">
+                          <size>0,10</size>
+                        </object>
+                        <object class="spacer">
+                          <size>0,0</size>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxStaticText">
+                            <label>  Track number  </label>
+                          </object>
+                          <flag>wxALIGN_CENTRE_VERTICAL</flag>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxSpinCtrl" name="LIVE_TRACKNO">
+                            <value>1</value>
+                            <min>1</min>
+                            <size>40,20</size>
+                          </object>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxStaticText">
+                            <label>  Track name  </label>
+                          </object>
+                          <flag>wxALIGN_CENTRE_VERTICAL</flag>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxTextCtrl" name="LIVE_TRACKNAME">
+							  <size>400,20</size>
+							  <value>--enter the name of the next track !--</value>
+                          </object>
+                        </object>
+                        <object class="spacer">
+                          <size>0,10</size>
+                        </object>
+                      </object>
+                    </object>
+                  </object>
+                  <flag>wxALIGN_CENTRE</flag>
+                </object>
+                <object class="spacer">
+                  <size>0,30</size>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxStaticBoxSizer">
+                    <label> Recording control </label>
+                    <orient>wxVERTICAL</orient>
+                    <object class="spacer">
+                      <size>0,10</size>
+                    </object>
+                    <object class="sizeritem">
+                      <object class="wxBoxSizer">
+                        <orient>wxHORIZONTAL</orient>
+                        <object class="spacer">
+                          <size>10,10</size>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxButton" name="LIVE_START">
+                            <label>Start recording</label>
+                          </object>
+                        </object>
+                        <object class="spacer">
+                          <size>10,10</size>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxButton" name="LIVE_STOP">
+                            <label>Stop recording</label>
+                            <enabled>0</enabled>
+                          </object>
+                        </object>
+                        <object class="spacer">
+                          <size>10,10</size>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxButton" name="LIVE_NEXT">
+                            <label>Next track</label>
+                            <enabled>0</enabled>
+                          </object>
+                        </object>
+                      </object>
+                    </object>
+                    <object class="spacer">
+                      <size>0,10</size>
+                    </object>
+                  </object>
+                  <flag>wxALIGN_CENTRE</flag>
+                </object>
+                <object class="spacer">
+                  <size>0,50</size>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxTextCtrl" name="LIVE_STATUS">
+                    <size>595,100</size>
+                    <style>wxTE_MULTILINE|wxTE_READONLY|wxHSCROLL</style>
+                  </object>
+                </object>
+              </object>
+            </object>
+          </object>
+          <object class="notebookpage">
+            <label>Size control</label>
+            <object class="wxPanel" name="PanelStats">
+              <object class="wxFlexGridSizer">
+                <cols>2</cols>
+                <rows>2</rows>
+                <object class="spacer">
+                  <size>0,0</size>
+                </object>
+                <object class="spacer">
+                  <size>0,0</size>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxStaticText">
+                    <label>  Total time    </label>
+                  </object>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxStaticText" name="STATS_TOTALTIME">
+                    <label></label>
+                  </object>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxStaticText">
+                    <label>  MP3s size    </label>
+                  </object>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxStaticText" name="STATS_MP3SIZE">
+                    <label></label>
+                  </object>
+                </object>
+              </object>
+              <hidden>1</hidden>
+            </object>
+          </object>
+          <object class="notebookpage">
+            <label>Settings</label>
+            <object class="wxPanel">
+              <object class="wxBoxSizer">
+                <orient>wxVERTICAL</orient>
+                <object class="sizeritem">
+                  <object class="wxFlexGridSizer">
+                    <cols>2</cols>
+                    <rows>2</rows>
+                    <object class="spacer">
+                      <size>30,30</size>
+                    </object>
+                    <object class="spacer">
+                      <size>0,0</size>
+                    </object>
+                    <object class="sizeritem">
+                      <object class="wxStaticText">
+                        <label>  Output directory    </label>
+                      </object>
+                      <flag>wxALIGN_CENTRE_VERTICAL</flag>
+                    </object>
+                    <object class="sizeritem">
+                      <object class="wxBoxSizer">
+                        <orient>wxHORIZONTAL</orient>
+                        <object class="sizeritem">
+                          <object class="wxTextCtrl" name="SETTINGS_INC">
+                            <size>180,20</size>
+                          </object>
+                          <flag>wxALIGN_CENTRE_VERTICAL</flag>
+                        </object>
+                        <object class="spacer">
+                          <size>20,20</size>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxButton" name="SETTINGS_INCBROWSE">
+                            <label>Browse...</label>
+                          </object>
+                        </object>
+                      </object>
+                      <flag></flag>
+                    </object>
+                    <object class="spacer">
+                      <size>0,15</size>
+                    </object>
+                    <object class="spacer">
+                      <size>0,0</size>
+                    </object>
+                    <object class="sizeritem">
+                      <object class="wxStaticText">
+                        <label>  Filename template    </label>
+                      </object>
+                      <flag>wxALIGN_CENTRE_VERTICAL</flag>
+                    </object>
+                    <object class="sizeritem">
+                      <object class="wxTextCtrl" name="SETTINGS_FNTEMPLATE">
+                        <value></value>
+                        <size>200,20</size>
+                      </object>
+                    </object>
+                    <object class="spacer">
+                      <size>0,0</size>
+                    </object>
+                    <object class="sizeritem">
+                      <object class="wxStaticText">
+                        <label> %f : audio format (flac/mp3/ogg)
+ %N : track number, leading 0
+ %a : Album name
+ %p : Artist name
+ %t : Track name</label>
+                      </object>
+                    </object>
+                    <object class="spacer">
+                      <size>0,15</size>
+                    </object>
+                    <object class="spacer">
+                      <size>0,0</size>
+                    </object>
+                    <object class="sizeritem">
+                      <object class="wxStaticText">
+                        <label>  Audio input    </label>
+                      </object>
+                      <flag>wxALIGN_CENTRE_VERTICAL</flag>
+                    </object>
+                    <object class="sizeritem">
+                      <object class="wxChoice" name="SETTINGS_AUDIOINPUT">
+                        <content>
+                          <item>pymedia (win32)</item>
+                          <item>arecord (linux)</item>
+                        </content>
+                        <selection>0</selection>
+                        <size>200,25</size>
+                      </object>
+                    </object>
+                    <object class="spacer">
+                      <size>0,15</size>
+                    </object>
+                    <object class="spacer">
+                      <size>0,0</size>
+                    </object>
+                    <object class="sizeritem">
+                      <object class="wxStaticText">
+                        <label>  Output encodings    </label>
+                      </object>
+                      <flag>wxALIGN_CENTRE_VERTICAL</flag>
+                    </object>
+                    <object class="sizeritem">
+                      <object class="wxFlexGridSizer">
+                        <object class="sizeritem">
+                          <object class="wxCheckBox" name="SETTINGS_ENC_FLAC">
+                            <label>FLAC</label>
+                            <checked>1</checked>
+                          </object>
+                        </object>
+                        <object class="spacer">
+                          <size>10,10</size>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxTextCtrl" name="SETTINGS_ENC_FLAC_CMD">
+                            <value>-s</value>
+                            <size>200,20</size>
+                          </object>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxCheckBox" name="SETTINGS_ENC_MP3">
+                            <label>MP3</label>
+                            <checked>0</checked>
+                          </object>
+                        </object>
+                        <object class="spacer">
+                          <size>10,10</size>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxTextCtrl" name="SETTINGS_ENC_MP3_CMD">
+                            <value>--preset standard</value>
+                          </object>
+                          <minsize>200,20</minsize>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxCheckBox" name="SETTINGS_ENC_OGG">
+                            <label>OGG</label>
+                            <checked>1</checked>
+                          </object>
+                        </object>
+                        <cols>3</cols>
+                        <rows>2</rows>
+                        <object class="spacer">
+                          <size>0,0</size>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxTextCtrl" name="SETTINGS_ENC_OGG_CMD">
+                            <value>-q 5</value>
+                          </object>
+                          <minsize>200,20</minsize>
+                        </object>
+                      </object>
+                    </object>
+                  </object>
+                </object>
+              </object>
+            </object>
+          </object>
+          <object class="notebookpage">
+            <label>About</label>
+            <object class="wxPanel">
+              <object class="wxStaticText">
+                <label>jamcorder 0.4
+
+Authors :
+ - Sylvain ZIMMER (www.sylvainzimmer.com)
+ - Nathan YERGLER (yergler.net)
+
+Sponsored by www.jamendo.com (nice place for CC music !)
+
+Licensed under the GNU GPL.
+
+Drop us a mail if you've any comments ! jamcorder@jamendo.com</label>
+                <pos>10,10</pos>
+              </object>
+            </object>
+          </object>
+          <size>600,500</size>
+        </object>
+      </object>
+      <object class="spacer">
+        <size>0,25</size>
+      </object>
+    </object>
+  </object>
+</resource>

@@ -1,0 +1,10 @@
+
+ccLive 0.3 (05/03/2004)
+-----------------------
+
+ * Fixed .wav files mess
+ * Removed WAV option in Settings, FLAC should do the job.
+ * Remove .wav on exit
+ * Fixed bug with spaces in dirs
+ * Added oggenc.exe
+ * Changed default output dir to "output" ...

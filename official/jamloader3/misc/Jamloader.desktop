@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Name[fr_FR]=Jamloader
+Exec=jamloader3.sh
+Comment[fr_FR]=Jamendo upload tool
+Icon[fr_FR]=/usr/share/pixmaps/jamloader_32.png
+Name=Jamloader
+Comment=Jamendo upload tool
+Icon=/usr/share/pixmaps/jamloader_32.png
+Categories=Application;Qt;Network;FileTransfer;

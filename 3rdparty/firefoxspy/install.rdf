@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+	<Description about="urn:mozilla:install-manifest">
+
+                <em:type>2</em:type>
+
+		<em:id>jamendospy-firefox@jamendo.com</em:id>
+		<em:name>Jamendo Spy</em:name>
+		<em:version>0.1.1</em:version>
+		<em:description>Opens a bar for the jamendo spy with live statistics</em:description>
+		<em:creator>Sylvain Zimmer</em:creator>
+		<em:homepageURL>http://www.jamendo.com/</em:homepageURL>
+		<em:iconURL>chrome://jamendospy/content/jam40.png</em:iconURL>
+		
+		
+		
+		<em:targetApplication>
+			<Description>
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>1.5</em:minVersion>
+				<em:maxVersion>1.6</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+
+	</Description>
+
+</RDF>

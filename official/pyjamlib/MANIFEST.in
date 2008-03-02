@@ -1,0 +1,3 @@
+recursive-include jamendo/audio/plugins/ *
+recursive-include jamendo/bittorrent/clients/BitTornado/ *
+include README

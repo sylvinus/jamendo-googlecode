@@ -1,0 +1,20 @@
+INSTALL NOTES
+
+unpack the archive :
+$ tar -xzvf jamloader-3.0.x.tar.gz
+
+
+change directory to unpacked content:
+$ cd ./jamloader3.0.x
+
+
+you can run Jamloader3 from this directory :
+python jamloader3.py
+
+
+or you can install it as root :
+- switch to root user
+$ sudo su
+# ./install.sh
+
+
