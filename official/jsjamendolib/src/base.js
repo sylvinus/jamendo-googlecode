@@ -7,9 +7,15 @@
 var JamendoClass = function() {}
 JamendoClass.prototype = {
 
+	apiDomain:"http://api.jamendo.com",
+
 	onDomReadyCallbacks:[],
 	
 	get2:function(path,params,callback,options) {
+	
+	},
+	
+	set:function(method,arguments,callback) {
 	
 	},
 	

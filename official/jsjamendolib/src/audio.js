@@ -1,5 +1,6 @@
 Jamendo.audio={
 	
+	players:[],
 
 	playMP3:function(url,offset) {
 	
@@ -13,9 +14,13 @@ Jamendo.audio={
 	getPosition:function() {
 	
 	
+	},
+	
+	setPlayer:function(playerType,playerOptions) {
+		if (Jamendo.audio.players[playerType]) {
+			Jamendo.audio.players[playerType].init(playerOptions);
+		}
 	}
-
-
 
 
 };
