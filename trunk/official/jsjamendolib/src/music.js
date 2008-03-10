@@ -13,6 +13,13 @@ Jamendo.music = {
 		},options);}
 	
 	},
+	
+	
+	getLicense:function() {
+		return {
+			"url":""
+		};
+	}
 
 
 };
