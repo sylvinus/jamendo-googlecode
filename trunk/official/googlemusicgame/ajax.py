@@ -155,8 +155,6 @@ class MainPage(webapp.RequestHandler):
             trackId = self.request.get('trackId')
             tagIdstr = re.sub("[^_a-z0-9A-Z]","",self.request.get('tag').strip().lower().replace(" ",""))
             
-            logging.error(tagIdstr)
-            
             round = self.getCurrentRound(game)
 
             
