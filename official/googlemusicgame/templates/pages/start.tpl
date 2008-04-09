@@ -72,7 +72,7 @@
 		<br/><br/>
 		You have currently matched <b id="game_matches"></b> of the <b id="game_othertags"></b> tag(s) entered by your partner. <b id="game_left"></b> left!
 		<br/><br/><br/>
-		
+		<i>Hint: a tag can be an instrument, a genre, a mood, a word from the lyrics, ...</i>
 		
 	</div>
 	
