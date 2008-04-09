@@ -160,7 +160,7 @@ class MainPage(webapp.RequestHandler):
             round = self.getCurrentRound(game)
 
             
-            if round and int(round.trackid)==int(trackId) and tagIdstr.strip():
+            if round and int(round.trackid)==int(trackId) and tagIdstr:
                 
                 tag = musicgame.Tag()
                 tag.round = round.key()
@@ -239,6 +239,10 @@ class MainPage(webapp.RequestHandler):
             
             #both players want to pass
             if partnerWantsToPass and meWantsToPass:
+                
+                round.status="passed"
+                round.put()
+                
                 round = self.newRound(game)
                 matches=[]
                 his=[]
