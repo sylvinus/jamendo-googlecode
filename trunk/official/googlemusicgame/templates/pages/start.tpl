@@ -32,7 +32,7 @@
 	
 	<div id="game_starting" style="display:none;">
 		<br/>
-		<i>We just found a partner! The game will start in a few seconds. Turn on your speakers!</i>
+		<b><i>We just found a partner! The game will start in a few seconds. Turn on your speakers!</i></b>
 	</div>
 	
 	<div id="game_stats" style="float:left;display:none;">
@@ -64,16 +64,24 @@
 
 		<form action="" method="get" onsubmit="Jamendo._currentGame.input(); return false;">
 		
-			<input type='text' style='width:200px;' id="game_input"> <input type="submit" value="tag">
+			<input type='text' style='width:200px;' id="game_input"> <input type="submit" value="tag"> &nbsp;&nbsp;&nbsp;<button id="game_pass" onclick="Jamendo._currentGame.pass(); return false;">pass this track</button>
 		</form>
+		
+		<div style="color:red;display:none;" id="game_partnerpass">
+			<br/>Your partner wants to pass. <button id="game_pass2" onclick="Jamendo._currentGame.pass(true); return false;">Okay, pass this track</button>
+		</div>
 		
 		<br/><br/>
 		Your tags for this track: <b id="game_yourtags"></b>
 		<br/><br/>
-		You have currently matched <b id="game_matches"></b> of the <b id="game_othertags"></b> tag(s) entered by your partner. <b id="game_left"></b> left!
+		You have currently matched <b id="game_matches"></b> of the <b id="game_othertags"></b> tag(s) entered by your partner. Match <b id="game_left"></b> more to score a point!
 		<br/><br/><br/>
 		<i>Hint: a tag can be an instrument, a genre, a mood, a word from the lyrics, ...</i>
-		<br/><br/><br/>
+		<br/><br/>
+		<i>Hint: if there is no more sound or if you think you are stuck, click on "pass this track"!</i>
+		<br/><br/>
+		
+		<br/>
 		
 	</div>
 	
