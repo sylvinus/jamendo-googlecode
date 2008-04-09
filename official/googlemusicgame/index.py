@@ -4,7 +4,9 @@ import wsgiref.handlers
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
 
+from google.appengine.ext import db
 
+import musicgame
     
 class MainPage(webapp.RequestHandler):
     
@@ -44,6 +46,20 @@ class AboutPage(MainPage):
 class ScoresPage(MainPage):   
     
     pagename = "highscores"
+    
+    
+    def getPage(self):
+        
+        bestgames = musicgame.Game.gql("ORDER BY score DESC").fetch(200)
+        
+        for g in bestgames:
+            g.datestartf=str(g.datestart)[0:10]
+        
+        tplvars = {
+            "scores":bestgames
+        }
+        
+        return self.getPageTemplate(tplvars)
     
       
     

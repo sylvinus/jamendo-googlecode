@@ -128,7 +128,9 @@ Jamendo.classes.MusicGame = Class.create({
 			//show score, stop polling
 			this.jamPlayer.audio.pauseTrack();
 			
-			alert("Game ended! Score : "+data.score+"\n\n Thanks for playing! High scores soon :)");
+			if (confirm("Game ended! Score : "+data.score+"\n\n Do you want to see the high scores?")) {
+				window.location="/highscores";
+			}
 			
 		} else if (data.status=="wait") {
 		
