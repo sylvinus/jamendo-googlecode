@@ -14,9 +14,6 @@ Jamendo.classes.MusicGame = Class.create({
 
 	initialize:function() {
 	
-		//preload API domain dns
-		Jamendo.insertScript("http://api.jamendo.com/blank.html");
-		
 		this.playerName=prompt("Enter a name for your player") || "Unknown player";
 		
 		$("game_starter").hide();
