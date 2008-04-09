@@ -14,7 +14,9 @@ Jamendo.classes.MusicGame = Class.create({
 
 	initialize:function() {
 	
-		this.playerName=prompt("Enter a name for your player") || "Unknown player";
+		this.playerName=prompt("Enter a name for your player") || "";
+		
+		if (!this.playerName) return;
 		
 		$("game_starter").hide();
 		$("game_waiting").show();
