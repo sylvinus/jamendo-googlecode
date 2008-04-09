@@ -19,7 +19,7 @@
 
 <div id="game_window">
 	
-	<div id="game_starter" style="margin:50px;" onclick="return false;">
+	<div id="game_starter" style="margin:30px;" onclick="return false;">
 		<span style="border:1px solid #C0C0C0;background:#99EECC;padding:20px;margin:20px;font-size:2em;">
 			<a href="#" onclick="Jamendo._currentGame = new Jamendo.classes.MusicGame(); return false;">Start the game now!</a>
 		</span>
