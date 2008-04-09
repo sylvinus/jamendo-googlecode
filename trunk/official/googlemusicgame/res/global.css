@@ -1,0 +1,293 @@
+/* reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	/*vertical-align: baseline; this fucks up display? */
+}
+
+body { line-height: 1; color: #333; background: white; }
+
+table { border-collapse: separate; border-spacing: 0; }
+caption, th, td { text-align: left; font-weight: normal; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: "" ""; }
+
+
+
+
+
+
+
+
+
+/* typography */
+
+body { 
+  font-size: 12px;
+  line-height: 1.3; /*6px;*/ 
+}
+
+
+/* Default fonts */
+h1,h2,h3,
+h4,h5,h6  { font-family: Arial, Verdana, Constantia, "Palatino Linotype", Palatino, Georgia, "Times New Roman", Times, sans-serif; }
+body      { font-family: Arial,Verdana, Constantia, "Palatino Linotype", Palatino, Georgia, "Times New Roman", Times, sans-serif; }
+pre       { font-family: Arial,Verdana, Constantia, "Palatino Linotype", Palatino, Georgia, "Times New Roman", Times, sans-serif; }
+code      { font-family: Arial,Verdana, Constantia, "Palatino Linotype", Palatino, Georgia, "Times New Roman", Times, sans-serif; }
+
+
+/* Headings
+-------------------------------------------------------------- */
+
+h1,h2,h3 {
+	font-family:"Trebuchet MS",sans-serif;
+}
+
+h1 { font-size: 30px; line-height:32px; color:#F88B0A; padding:0 0 0 0; }
+h2 { font-size: 20px; line-height:24px; }
+h3 { font-size: 16px; line-height:16px; color:#888; border-bottom:1px solid #C0C0C0; margin:10px 0px 5px 0px; }
+h4 { font-size: 14px; font-weight:bold; }
+h5 { font-size: 12px; font-weight:bold; }
+h6 { font-size: 12px; }
+
+
+/* Text elements
+-------------------------------------------------------------- */
+
+p           { margin: 0 0 0 0;}
+
+a           { cursor:pointer; color: #723083; text-decoration: none;cursor: pointer;}
+a:hover     { text-decoration:underline; }
+
+ul, ol      { margin: 0 0 8px 18px;}
+ul          { list-style-type: disc; }
+ol          { list-style-type: decimal; }
+dl          { margin: 0 0 18px 0; }
+dl dt       { font-weight: bold; }
+
+blockquote  { margin: 0 0 18px 18px; color: #666; font-style: italic; }
+strong      { font-weight: bold; }
+em          { font-style: italic; }
+pre         { margin-bottom: 18px; background: #eee; border:1px solid #ddd; padding:16px; }
+
+/* Use this to create a horizontal ruler across a column. */
+hr {
+  background: #B2CCFF; 
+  color: #B2CCFF;
+  clear: both; 
+  float: none; 
+  width: 100%; 
+  height: 2px;
+  margin: 0 0 16px 0;
+  border: none; 
+}
+
+
+/* Typo links
+--------------------------------------------------------------- */
+
+.g_artist_name a, .g_artist_name{ color: #F88B0A;font-size: 13px ; line-height: 13px;font-weight : bold;}
+
+.g_artist_name a:hover, .g_artist_name_hover{ }
+
+.g_album_name a, .g_album_name{ color: #F88B0A; font-size: 12px ;}
+
+.g_album_name a:hover, .g_album_name_hover{ }
+
+.g_album_years {font-size: 11px ;line-height: 11px;};
+
+.g_tag_name a, .g_tag_name{color : #723083; font-size: 12px ;}
+
+.g_tag_name a:hover, .g_tag_name_hover{color : #6e2f6c;}
+
+.g_album_download a, .g_album_download{color : #723083; font-size: 12px ;}
+
+.g_album_download a:hover, .g_album_download_hover{color : #6e2f6c;}
+
+.g_username, .g_username a{ color:#723083; }
+
+/*.g_avatar img{ position: relative; text-align: center;}*/
+
+.g_more {clear: both; position: relative; text-align: right;margin: 0px 5px 0px 0px;color: #723083;}
+
+.title {color : #4C4C4C; font-size: 14px; font-weight: bold; margin: 5px }
+
+.title1 {color : #4C4C4C; border-bottom : solid 1px #4C4C4C; font-size: 14px; font-weight: bold; margin: 5px }
+
+.title_album_name {color : #4C4C4C; font-size: 24px; margin: 5px }
+
+.g_playbutton .buton_hover{	display: none;}
+	
+.g_playbutton.hover img{  display: none;}
+
+.g_playbutton.hover .buton_hover{ display: block;}
+
+.g_globalbuton .buton_hover{	display: none;	}
+	
+.g_globalbuton.hover img{ display: none;	}
+
+.g_globalbuton.hover .buton_hover{ display: block;}	
+
+.cover { border:1px solid #CCC; padding:3px; }
+
+.g_genre { font-style:italic;}
+
+.hidden { display:none; }
+
+.boldstatement {
+	padding:7px;
+	text-align:center;
+	font-size:18px;
+	color:#606060;
+}
+
+
+
+
+
+
+
+/* page */
+
+
+
+
+
+
+.header {
+	height: 60px;
+	width: auto;
+	position:relative;
+}
+
+.header_usertools {
+	position:absolute;
+	top:3 px;
+	right: 3px;
+}
+	.header_logo {
+		position:absolute;
+		top:3px;
+		left : 3px;
+		width: 227px;
+		height : 54px;
+	}
+      
+ 
+.header_sous_menu{
+	position: relative;
+	height : 24px; /* was 28 */
+	background-color:#e98002;
+	background-image: url('http://img.jamendo.com/orange/menu/button/menuheader/fond_sous_menu.png');
+	background-repeat: repeat-x;
+	background-position: top left;
+	margin:0px 10px 0px 10px;
+	-webkit-border-radius:20px;
+	-moz-border-radius:20px;
+	padding-left:10px;
+}
+ 
+	.header_sous_menu_link{
+		float:left;
+		height:24px;
+		color: #ffffff;
+		white-space:nowrap;
+		font-size : 13px;
+		line-height:24px;
+		margin : 0px 5px 0px 5px;
+	}
+	
+		.header_sous_menu_link a{
+			font-size : 13px;
+			line-height:24px;
+			color: #ffffff;
+		}
+		
+		.header_sous_menu_link .selected, .header_sous_menu_link a:hover{
+			text-decoration:underline;
+			color:#ffffff;
+		}
+ 
+
+.header_content {
+	margin-left:300px;	
+	height:65px;
+}
+
+
+
+.page_navigation {
+	margin:5px 5px 10px 30px;
+	font-size:12px;
+}
+.page_navigation .l {
+	font-weight:bold;
+}
+
+
+.page_content {
+padding:0px 20px;
+}
+
+
+
+
+/* player */
+
+
+
+
+#jamPlayer_volume {
+	width: 80px;
+	position:absolute;
+	top:30px;
+	right:10px;
+}
+	#jamplayerControls_volume_volumeMin {
+		position:absolute;
+		bottom:2px;
+		left:2px;
+		width:13px;
+		height:10px;
+		background:url('http://img.jamendo.com/orange/player/volume-min.png') bottom left no-repeat scroll;
+	}
+	#jamplayerControls_volume_volumeMax {
+		position:absolute;
+		bottom:2px;
+		right:2px;
+		width:13px;
+		height:10px;
+		background:url('http://img.jamendo.com/orange/player/volume-max.png') bottom right no-repeat scroll;
+	}
+		
+	#jamplayerControls_volume_track {
+		position:absolute;
+		bottom:2px;
+		background: #ccc;
+		height: 6px;
+		width: 50px;
+		margin:2px 15px;
+	}
+		
+	#jamplayerControls_volume_handle {
+			position: absolute;
+			overflow: hidden;
+			width: 6px;
+			background: #666;
+			height: 10px;
+			top:-2px;
+	}
