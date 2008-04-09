@@ -291,3 +291,22 @@ padding:0px 20px;
 			height: 10px;
 			top:-2px;
 	}
+	
+	
+/* highscores */
+
+#game_highscores {
+	border-spacing:1px;
+	background-color:#C0C0C0;
+}
+
+#game_highscores th,#game_highscores td{
+	padding:10px;
+	background-color:#FFFFFF;
+}
+
+#game_highscores th {
+	font-weight:bold;	
+	background-color:#F0F0F0;
+}
+
