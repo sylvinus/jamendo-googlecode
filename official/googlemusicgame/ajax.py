@@ -153,7 +153,7 @@ class MainPage(webapp.RequestHandler):
         if name=="tag":
             
             trackId = self.request.get('trackId')
-            tagIdstr = self.request.get('tag')
+            tagIdstr = self.request.get('tag').strip().lower().replace(" ","")
             
             round = self.getCurrentRound(game)
 
@@ -162,7 +162,7 @@ class MainPage(webapp.RequestHandler):
                 
                 tag = musicgame.Tag()
                 tag.round = round.key()
-                tag.idstr = tagIdstr.strip()
+                tag.idstr = tagIdstr
                 tag.player=player
                 tag.put()
                 
@@ -214,21 +214,39 @@ class MainPage(webapp.RequestHandler):
         mine=set()
         his=set()
         
+        partnerWantsToPass=False
+        meWantsToPass=False
+        
+        
         for tag in tags:
             if tag.player.key()==player.key():
-                mine.add(tag.idstr)
+                if tag.idstr=="_pass":
+                    meWantsToPass=True
+                else:
+                    mine.add(tag.idstr)
             else:
-                his.add(tag.idstr)
+                if tag.idstr=="_pass":
+                    partnerWantsToPass=True
+                else:
+                    his.add(tag.idstr)
         
         matches=mine.intersection(his)
         
         #try again!
-        if len(matches)<minMatches:
+        if len(matches)<minMatches or (partnerWantsToPass and meWantsToPass):
+            
+            #both players want to pass
+            if partnerWantsToPass and meWantsToPass:
+                round = self.newRound(game)
+                matches=[]
+                his=[]
+            
             return {
                 'status':'ingame',
                 'othertags':len(his),
                 'matches':len(matches),
                 'trackId':round.trackid,
+                'pass':partnerWantsToPass,
                 'score':game.score
             }
             
@@ -248,6 +266,7 @@ class MainPage(webapp.RequestHandler):
                 'status':'ingame',
                 'matches':0,
                 'othertags':0,
+                'pass':partnerWantsToPass,
                 'trackId':round.trackid,
                 'score':game.score
             }

@@ -87,6 +87,18 @@ Jamendo.classes.MusicGame = Class.create({
 		
 	},
 	
+	pass:function(partnerAlreadyPassed) {
+	
+		if (partnerAlreadyPassed) {
+			try {
+				this.jamPlayer.audio.pauseTrack();
+			} catch (e) {}
+		}
+		$("game_partnerpass").hide();
+	
+		this.cancelPollTimer();
+		this.ajax("tag",{"tag":"_pass","trackId":this.trackId},this.pollreturn.bind(this));
+	},
 	
 	input:function() {
 	
@@ -126,7 +138,9 @@ Jamendo.classes.MusicGame = Class.create({
 		if (data.status=="ended") {
 		
 			//show score, stop polling
-			this.jamPlayer.audio.pauseTrack();
+			try {
+				this.jamPlayer.audio.pauseTrack();
+			} catch (e) {}
 			
 			if (confirm("Game ended! Score : "+data.score+"\n\n Do you want to see the high scores?")) {
 				window.location="/highscores";
@@ -151,6 +165,9 @@ Jamendo.classes.MusicGame = Class.create({
 			$("game_matches").innerHTML=data.matches;
 			$("game_left").innerHTML = this.minMatches-data.matches;
 			
+			if (data.pass) {
+				$("game_partnerpass").show();
+			}
 		
 			//has the game just started?
 			if (!this.startTime) {
@@ -184,6 +201,7 @@ Jamendo.classes.MusicGame = Class.create({
 		
 		this.yourtags = [];
 		$("game_yourtags").innerHTML="";
+		$("game_partnerpass").hide();
 		
 		this.trackId=trackId;
 		

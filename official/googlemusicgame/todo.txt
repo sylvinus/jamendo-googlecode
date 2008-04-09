@@ -1,5 +1,5 @@
  - Don't allow players to have the same IP ?
  - Display a warning when partner timeouted
- - Add a "pass" option
  - auto-pass when track is finished
  - auto-set the name of googleusers
+ - preload tracks
