@@ -10,13 +10,13 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
-# Used 362 times in query history.
+# Used 408 times in query history.
 - kind: Player
   properties:
   - name: status
   - name: datelastrequest
 
-# Used 2260 times in query history.
+# Used 2282 times in query history.
 - kind: Round
   properties:
   - name: game
