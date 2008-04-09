@@ -46,8 +46,6 @@
 	<div class="header_content">
 			<br/>
 		Welcome to the Jamendo Music Game, a music genre guessing mashup inspired by the <a target="_blank" href="http://images.google.com/imagelabeler/">Google Image Labeler</a>.
-			<br/>
-			<br/>
 		
 	</div>
 		

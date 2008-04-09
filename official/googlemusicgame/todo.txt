@@ -6,3 +6,4 @@
  - see artist names + jamendo links
  - onunload, set user status="out"
  - bot with previous answers
+ - error http://api.jamendo.com/get2/stream/track/plain/?id=6994
