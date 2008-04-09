@@ -10,6 +10,12 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
+# Used once in query history.
+- kind: Game
+  properties:
+  - name: score
+    direction: desc
+
 # Used 408 times in query history.
 - kind: Player
   properties:
