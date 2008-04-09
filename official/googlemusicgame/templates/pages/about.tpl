@@ -5,7 +5,13 @@ All tracks used in this game are published on <a href="http://www.jamendo.com/">
 
 <br/><br/>
 
-Please note that it is still in beta stage so you may experience some issues. Please send your feedback to: sylvain _AT_ jamendo.com
+Please note that it is still in beta stage so you may experience some issues. 
+
+<br/><br/>
+For those interested, source is under the GPLv2 and can be found on our <a href="http://code.google.com/p/jamendo/source/browse/trunk/official/googlemusicgame/">Google Code repository</a>. 
+
+<br/><br/>
+<b>Please send your feedback to: sylvain _AT_ jamendo.com</b>
 
 <br/><br/>
 Thanks and have fun!
