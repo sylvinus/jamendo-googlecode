@@ -16,13 +16,13 @@ indexes:
   - name: score
     direction: desc
 
-# Used 435 times in query history.
+# Used 437 times in query history.
 - kind: Player
   properties:
   - name: status
   - name: datelastrequest
 
-# Used 2733 times in query history.
+# Used 2739 times in query history.
 - kind: Round
   properties:
   - name: game
