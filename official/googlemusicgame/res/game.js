@@ -16,7 +16,7 @@ Jamendo.classes.MusicGame = Class.create({
 	
 		this.playerName=prompt("Enter a name for your player") || "";
 		
-		if (!this.playerName) return;
+		if (!this.playerName.replace(/\s*/,"")) return;
 		
 		$("game_starter").hide();
 		$("game_waiting").show();
