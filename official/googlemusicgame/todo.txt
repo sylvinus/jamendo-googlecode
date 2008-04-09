@@ -3,3 +3,6 @@
  - auto-pass when track is finished
  - auto-set the name of googleusers
  - preload tracks
+ - see artist names + jamendo links
+ - onunload, set user status="out"
+ - bot with previous answers

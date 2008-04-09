@@ -207,7 +207,7 @@ Jamendo.classes.MusicGame = Class.create({
 		
 		this.trackId=trackId;
 		
-		var offset=20;
+		var offset=0;
 		
 		(function() {
 			this.jamPlayer.audio.playFile("http://api.jamendo.com/get2/stream/track/redirect/?id="+trackId,offset);
