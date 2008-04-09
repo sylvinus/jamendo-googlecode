@@ -8,7 +8,10 @@ handlers:
 
 - url: /res
   static_dir: res
-  
+
+- url: /favicon.ico
+  static_dir: /
+
 - url: /ajax
   script: ajax.py
   

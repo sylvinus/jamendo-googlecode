@@ -16,7 +16,7 @@ indexes:
   - name: status
   - name: datelastrequest
 
-# Used 2282 times in query history.
+# Used 2400 times in query history.
 - kind: Round
   properties:
   - name: game
