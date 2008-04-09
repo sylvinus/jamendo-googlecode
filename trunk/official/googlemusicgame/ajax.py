@@ -53,7 +53,6 @@ class MainPage(webapp.RequestHandler):
                 player.id = playerId
                 player.status = "waiting"
                 player.name = self.request.get('playerName').replace(">","&gt;").replace("<","&lt;")
-                logging.error(player.name)
                 
             player.datelastrequest = datetime.datetime.today()
             player.put()
