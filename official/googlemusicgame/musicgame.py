@@ -10,7 +10,7 @@ class Player(db.Model):
     name=db.StringProperty()
     status=db.StringProperty()
     datelastrequest=db.DateTimeProperty()
-    
+    ip=db.StringProperty()
     currentgameid=db.StringProperty()
 
 

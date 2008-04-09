@@ -53,6 +53,7 @@ class MainPage(webapp.RequestHandler):
                 player.id = playerId
                 player.status = "waiting"
                 player.name = self.request.get('playerName').replace(">","&gt;").replace("<","&lt;")
+                player.ip = self.request.remote_addr
                 
             player.datelastrequest = datetime.datetime.today()
             player.put()
