@@ -15,3 +15,6 @@ For those interested, source is under the GPLv2 and can be found on our <a href=
 
 <br/><br/>
 Thanks and have fun!
+<br/><br/><br/>
+
+<i>PS: If you liked this game, please <a href="http://appgallery.appspot.com/about_app?app_id=agphcHBnYWxsZXJ5chMLEgxBcHBsaWNhdGlvbnMYrQMM">leave us a comment</a> ;-)</i>

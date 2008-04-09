@@ -1,8 +1,11 @@
 <h1>High scores</h1>
 
 <br/>
-Here are the best scores! If your name is not on top, <a href="/">you can try again!</a> ;-)
+Here are the best scores! If your name is not on top, <a href="/">you can try again!</a>
 <br/><br/>
+If you liked this game, please <a href="http://appgallery.appspot.com/about_app?app_id=agphcHBnYWxsZXJ5chMLEgxBcHBsaWNhdGlvbnMYrQMM">leave us a comment</a> ;-)
+<br/><br/>
+		
 <table id="game_highscores">
 	<tr>
 		<th>
