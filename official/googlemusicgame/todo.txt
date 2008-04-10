@@ -5,5 +5,4 @@
  - see artist/track names + jamendo links after the game
  - onunload, set user status="out"
  - bot with previous answers
- - error http://api.jamendo.com/get2/stream/track/plain/?id=6994 (album masqué)
  - autofocus
