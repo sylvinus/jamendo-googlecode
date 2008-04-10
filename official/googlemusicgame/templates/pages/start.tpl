@@ -25,7 +25,7 @@
 	
 	<div id="game_waiting" style="display:none;">
 		<br/>
-		<i>Looking for a partner... please wait a few moments!</i>
+		<i>Looking for a partner... please wait a few moments!<br/><br/><br/>Hint: If it takes too long, you can leave this window in the background and when you'll start hearing music you'll know the game started! ;-)</i>
 	</div>
 	
 	<div id="game_starting" style="display:none;">
