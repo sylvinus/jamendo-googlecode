@@ -64,7 +64,7 @@
 
 		<form action="" method="get" onsubmit="Jamendo._currentGame.input(); return false;">
 		
-			<input type='text' style='width:200px;' id="game_input"> <input type="submit" value="tag"> &nbsp;&nbsp;&nbsp;<button id="game_pass" onclick="Jamendo._currentGame.pass(); return false;">pass this track</button>
+			<input type='text' style='width:200px;' id="game_input" autocomplete="off"> <input type="submit" value="tag"> &nbsp;&nbsp;&nbsp;<button id="game_pass" onclick="Jamendo._currentGame.pass(); return false;">pass this track</button>
 		</form>
 		
 		<div style="color:red;display:none;" id="game_partnerpass">
