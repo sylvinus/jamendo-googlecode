@@ -1,0 +1,16 @@
+Changelog (<a href="http://code.google.com/p/jamendo/source/list" target="_blank">svn</a>)
+---------------
+
+2008-04-10
+ * Added a warning when partner has quit
+ * Added a confirmation box when quitting a game in progress
+ * Fixed a bunch of bugs in Internet Explorer
+
+2008-04-09
+ * Fixed bugs that made the sound stop
+ * Added "pass" option
+ * Lowered the number of required matches to 2
+ * Public release
+
+2008-04-08
+ * First development version

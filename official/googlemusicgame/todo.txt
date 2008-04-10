@@ -3,3 +3,4 @@
  - preload tracks
  - see artist/track names + jamendo links after the game
  - bot with previous answers
+ - add min_duration=120 in the jamendo api request

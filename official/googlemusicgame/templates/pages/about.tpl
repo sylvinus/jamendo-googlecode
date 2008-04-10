@@ -18,3 +18,8 @@ Thanks and have fun!
 <br/><br/><br/>
 
 <i>PS: If you liked this game, please <a href="http://appgallery.appspot.com/about_app?app_id=agphcHBnYWxsZXJ5chMLEgxBcHBsaWNhdGlvbnMYrQMM">leave us a comment</a> ;-)</i>
+
+
+	
+	
+<br/><br/><br/><br/><pre style="background-color:#F9F9F9">{{ changelog }}</pre>

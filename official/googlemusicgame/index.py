@@ -34,7 +34,11 @@ class MainPage(webapp.RequestHandler):
     
     def getPage(self):
         
-        tplvars = {}
+        tplvars = {
+                   "changelog":open("changelog.txt").read()
+        }
+        
+        
         
         return self.getPageTemplate(tplvars)
     
