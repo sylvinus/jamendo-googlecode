@@ -74,6 +74,8 @@ Jamendo.classes.MusicGame = Class.create({
 				
 				window.onbeforeunload = this.confirmExit;
 				window.onunload=function() {
+				
+					//doesn't seem to work...
 					Jamendo._currentGame.ajax("quit");
 				};
 				
