@@ -50,7 +50,7 @@ class ScoresPage(MainPage):
     
     def getPage(self):
         
-        bestgames = musicgame.Game.gql("ORDER BY score DESC").fetch(100)
+        bestgames = musicgame.Game.gql("WHERE sameip=FALSE ORDER BY score DESC").fetch(100)
         
         for g in bestgames:
             g.datestartf=str(g.datestart)[0:10]

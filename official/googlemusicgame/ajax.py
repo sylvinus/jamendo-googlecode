@@ -38,6 +38,8 @@ class MainPage(webapp.RequestHandler):
         
         self.response.out.write(simplejson.dumps(resp))
 
+    def get(self):
+        return self.post()
     
     def method(self,name):
         
@@ -45,6 +47,15 @@ class MainPage(webapp.RequestHandler):
         
         player = musicgame.Player.gql("WHERE id = :1",playerId).get()
         
+        
+        if name=="updatedb":
+            
+            games = musicgame.Game.gql("").fetch(1000)
+            for game in games:
+                game.sameip=False
+                game.put()
+                
+            return True
         
         if name=="findpartner":
             
@@ -100,6 +111,7 @@ class MainPage(webapp.RequestHandler):
                     game.player2=found.key()
                     game.datestart = gameDelayStart+datetime.datetime.today()
                     game.score=0
+                    game.sameip=(player.ip==found.ip)
                     game.put()
                     
                     #1st round
@@ -120,6 +132,7 @@ class MainPage(webapp.RequestHandler):
                 return {
                         "otherName":found.name,
                         "gameId":game.id,
+                        "sameIp":game.sameip,
                         "trackId":round.trackid
                 }
                 
