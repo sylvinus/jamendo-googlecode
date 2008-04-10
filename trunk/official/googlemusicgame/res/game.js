@@ -62,6 +62,10 @@ Jamendo.classes.MusicGame = Class.create({
 				
 				$("game_waiting").hide();
 				$("game_starting").show();
+				
+				if (data.sameIp) {
+					$("game_sameip").show();
+				}
 								
 				$("game_othername").innerHTML=this.otherName;
 				

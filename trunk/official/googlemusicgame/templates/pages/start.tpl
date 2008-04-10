@@ -20,9 +20,7 @@
 <div id="game_window">
 	
 	<div id="game_starter" style="margin:30px;" onclick="return false;">
-		<span style="border:1px solid #C0C0C0;background:#99EECC;padding:20px;margin:20px;font-size:2em;">
-			<a href="#" onclick="Jamendo._currentGame = new Jamendo.classes.MusicGame(); return false;">Start the game now!</a>
-		</span>
+		<button style="font-size:2em;font-weight:bold;padding:10px;cursor:pointer;" onclick="Jamendo._currentGame = new Jamendo.classes.MusicGame(); return false;">Start the game now!</button>
 	</div>
 	
 	<div id="game_waiting" style="display:none;">
@@ -57,7 +55,9 @@
 			<div id="jamplayerControls_volume_volumeMax"></div>
 		</div>
 		
-	
+		<div id="game_sameip" style="display:none;">
+			<i>Please not that you have the same IP as your partner. Therefore, to prevent cheating, we won't add your score to the highscores. Sorry!</i><br/><br/>
+		</div>
 		
 		You are playing with <b id="game_othername"></b>. Good luck!
 		<br/><br/>

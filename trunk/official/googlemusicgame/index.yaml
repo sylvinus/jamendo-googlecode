@@ -10,19 +10,26 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
-# Used 22 times in query history.
+# Used 12 times in query history.
+- kind: Game
+  properties:
+  - name: sameip
+  - name: score
+    direction: desc
+
+# Used 25 times in query history.
 - kind: Game
   properties:
   - name: score
     direction: desc
 
-# Used 437 times in query history.
+# Used 451 times in query history.
 - kind: Player
   properties:
   - name: status
   - name: datelastrequest
 
-# Used 2739 times in query history.
+# Used 2815 times in query history.
 - kind: Round
   properties:
   - name: game

@@ -21,6 +21,7 @@ class Game(db.Model):
     status=db.StringProperty()
     datestart=db.DateTimeProperty()
     score=db.IntegerProperty()
+    sameip=db.BooleanProperty(default=False)
     
     
 class Round(db.Model):
