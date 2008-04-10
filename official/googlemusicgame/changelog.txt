@@ -1,6 +1,10 @@
 Changelog (<a href="http://code.google.com/p/jamendo/source/list" target="_blank">svn</a>)
 ---------------
 
+2008-04-11
+ * Added a "credits" screen at the end of the game, with
+   links and details on the tracks played during the game.
+
 2008-04-10
  * Added a warning when partner has quit
  * Added a confirmation box when quitting a game in progress
