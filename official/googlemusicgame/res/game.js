@@ -14,9 +14,18 @@ Jamendo.classes.MusicGame = Class.create({
 
 	initialize:function() {
 	
-		this.playerName=prompt("Enter a name for your player") || "";
+		SuperBox.call("localdiv","superbox_nickname");
+		
+		$("game_inputnickname").focus();
+	},
+	
+	gotnickname:function() {
+	
+		this.playerName=$F("game_inputnickname");
 		
 		if (!this.playerName.replace(/\s*/,"")) return;
+		
+		SuperBox.remove();
 		
 		$("game_starter").hide();
 		$("game_waiting").show();
@@ -37,13 +46,21 @@ Jamendo.classes.MusicGame = Class.create({
 	},
 	
 	ajax:function(method,args,callback) {
-		args["method"]=method;
-		args["playerId"]="n"+this.playerhash;
-		
-		if (this.gameId) {
-			args["gameId"] = this.gameId;
+		try {
+			args["method"]=method;
+			args["playerId"]="n"+this.playerhash;
+			
+			if (this.gameId) {
+				args["gameId"] = this.gameId;
+			}
+			return Jamendo.jsonRequest("/ajax",args||{},callback,{
+				"timeout":10000,
+				"retryDelay":1000,
+				"retryCount":1
+			});
+		} catch (e) {
+			if (typeof(console)!="undefined") console.log(e);
 		}
-		return Jamendo.jsonRequest("/ajax",args,callback);
 	},
 	
 	findPartner:function() {
@@ -54,6 +71,11 @@ Jamendo.classes.MusicGame = Class.create({
 			} else {
 			
 				//game is starting !
+				
+				window.onbeforeunload = this.confirmExit;
+				window.onunload=function() {
+					Jamendo._currentGame.ajax("quit");
+				};
 				
 				this.otherName = data.otherName;
 				this.gameId = data.gameId;
@@ -89,6 +111,8 @@ Jamendo.classes.MusicGame = Class.create({
 			$("game_clock").innerHTML=str;
 			
 			this.clock.bind(this).delay(0.2);
+		} else {
+			window.onunload=null;
 		}
 		
 	},
@@ -141,19 +165,39 @@ Jamendo.classes.MusicGame = Class.create({
 		this.pollTimer = setTimeout(this.poll.bind(this),this.pollInterval*1000);
 	},
 	
-	pollreturn:function(data) {
+	confirmExit:function() {
+		if (window.onunload) {
+			return "Do you really want to quit the game while it's running?\n\nIt's not really nice for your partner so please think twice about it!\n\nThanks!";
+		//http://tim.mackey.ie/HowToCancelAnOnbeforeunloadEvent.aspx
+		} else if (Prototype.Browser.IE) {
+			window.event.cancelBubble = true;
+		}
+	},
 	
-		if (data.status=="ended") {
+	pollreturn:function(data) {
+		try {
+		if (data.status=="ended" || data.status=="partnerquit") {
 		
 			//show score, stop polling
 			try {
 				this.jamPlayer.audio.pauseTrack();
 			} catch (e) {}
 			
-			if (confirm("Game ended! Score : "+data.score+"\n\n Do you want to see the high scores?")) {
-				window.location="/highscores";
-			}
+			window.onunload=null;
 			
+			if (data.status=="partnerquit") {
+			
+				if (confirm("We're sorry, your partner has quit the game :-(\n\nBad luck! Do you want to start another game?")) {
+					window.location.reload(true);
+				}
+				
+			} else {
+				
+				if (confirm("Game ended! Score : "+data.score+"\n\n Do you want to see the high scores?")) {
+					window.location="/highscores";
+				}
+			}
+				
 		} else if (data.status=="wait") {
 		
 			//just poll again...
@@ -202,12 +246,14 @@ Jamendo.classes.MusicGame = Class.create({
 			
 			this.resetPollTimer();
 		}
-		
+		} catch (e) {
+			if (typeof(console)!="undefined") console.log(e);
+		}
 		
 	},
 	
 	changeTrack:function(trackId) {
-		
+		try {
 		this.yourtags = [];
 		$("game_yourtags").innerHTML="";
 		$("game_partnerpass").hide();
@@ -222,6 +268,10 @@ Jamendo.classes.MusicGame = Class.create({
 		(function() {
 			this.jamPlayer.audio.playFile("http://api.jamendo.com/get2/stream/track/redirect/?id="+trackId,offset);
 		}).bind(this).delay(Jamendo._audioOK?0:3);
+		
+		} catch (e) {
+			
+		}
 	},
 	
 	

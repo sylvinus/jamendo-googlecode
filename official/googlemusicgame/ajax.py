@@ -21,6 +21,10 @@ logoutDelta = datetime.timedelta(0,8)
 
 gameDelayStart = datetime.timedelta(0,7)
 gameTime = datetime.timedelta(0,240)
+
+#if we get no activity from a player in 20 seconds (timer is 3), we can consider him as timeouted.
+playerTimeout = datetime.timedelta(0,20)
+
 minMatches = 2
 
 
@@ -147,7 +151,11 @@ class MainPage(webapp.RequestHandler):
                         "gameId":False
                 }
                 
-                
+        
+        if name=="quit":
+            player.status="out"
+            player.put()
+            return 1
                 
                 
         player.datelastrequest = datetime.datetime.today()
@@ -219,6 +227,20 @@ class MainPage(webapp.RequestHandler):
             return {
                 'status':'wait'    
             }
+        
+        
+        #check if the other player is still there!
+        if game.player1.key()==player.key():
+            partner=game.player2
+        else:
+            partner=game.player1
+            
+        if partner.status=="out" or partner.datelastrequest<(datetime.datetime.today()-playerTimeout):
+            return {
+                'status':"partnerquit",
+                'score':game.score
+            } 
+            
         
         
         #get all the tags for that round
