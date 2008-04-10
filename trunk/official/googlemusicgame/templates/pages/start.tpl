@@ -20,7 +20,7 @@
 <div id="game_window">
 	
 	<div id="game_starter" style="margin:30px;" onclick="return false;">
-		<button style="font-size:2em;font-weight:bold;padding:10px;cursor:pointer;" onclick="Jamendo._currentGame = new Jamendo.classes.MusicGame(); return false;">Start the game now!</button>
+		<button style="font-size:1.3em;font-weight:bold;padding:10px;cursor:pointer;" onclick="Jamendo._currentGame = new Jamendo.classes.MusicGame(); return false;">Start the game now!</button>
 	</div>
 	
 	<div id="game_waiting" style="display:none;">
@@ -56,7 +56,8 @@
 		</div>
 		
 		<div id="game_sameip" style="display:none;">
-			<i>Please not that you have the same IP as your partner. Therefore, to prevent cheating, we won't add your score to the highscores. Sorry!</i><br/><br/>
+			<i>Please not that you have the same IP as your partner.
+			<br/> Therefore, to prevent cheating, we won't add your score to the highscores. Sorry!</i><br/><br/>
 		</div>
 		
 		You are playing with <b id="game_othername"></b>. Good luck!
@@ -88,4 +89,14 @@
 	
 </div>
 
-<div id="jamPlayerAudioInsert"></div>
+<div id="superbox_nickname" style="width:240px;height:90px;display:none;">
+	<form onsubmit="Jamendo._currentGame.gotnickname(); return false;" action="" method="get">
+		<br/>
+		<b>Please enter a name for your player:</b>
+		<br/><br/>
+		<input type="text" id="game_inputnickname" style="width:150px;"> <input type="submit" value="OK">
+		
+	</form>
+</div>
+
+<div id="jamPlayerAudioInsert" style="position:absolute;visibility:visible;left:-100px;height:1px;width:1px;">&nbsp;</div>
