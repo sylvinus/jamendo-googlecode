@@ -101,6 +101,7 @@ Jamendo.classes.MusicGame = Class.create({
 			} catch (e) {}
 		}
 		$("game_partnerpass").hide();
+		$("game_input").focus();
 	
 		this.cancelPollTimer();
 		this.ajax("tag",{"tag":"_pass","trackId":this.trackId},this.pollreturn.bind(this));
@@ -110,6 +111,7 @@ Jamendo.classes.MusicGame = Class.create({
 	
 		var tag=$F("game_input").replace(/\s*/,"");
 		$("game_input").value="";
+		$("game_input").focus();
 		
 		if (tag) {
 			
@@ -182,6 +184,7 @@ Jamendo.classes.MusicGame = Class.create({
 				$("game_waiting").hide();
 				$("game_starting").hide();
 				$("game_field").show();
+				$("game_input").focus();
 				$("game_stats").show();
 				
 				this.jamPlayer.gui.addComponent(new Jamendo.classes.components.Volumeslider({
@@ -208,6 +211,9 @@ Jamendo.classes.MusicGame = Class.create({
 		this.yourtags = [];
 		$("game_yourtags").innerHTML="";
 		$("game_partnerpass").hide();
+		
+		$("game_input").value="";
+		$("game_input").focus();
 		
 		this.trackId=trackId;
 		
