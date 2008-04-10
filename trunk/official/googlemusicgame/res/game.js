@@ -17,6 +17,8 @@ Jamendo.classes.MusicGame = Class.create({
 		SuperBox.call("localdiv","superbox_nickname");
 		
 		$("game_inputnickname").focus();
+		
+		
 	},
 	
 	gotnickname:function() {
@@ -41,7 +43,9 @@ Jamendo.classes.MusicGame = Class.create({
 		
 		this.startTime=false;
 		
+		this.trackIds=[];
 		
+		this.score=0;
 		
 	},
 	
@@ -176,6 +180,50 @@ Jamendo.classes.MusicGame = Class.create({
 		}
 	},
 	
+	creditsCallback:function(data) {
+
+		if (SuperBox.shown) {
+			var html="Game ended! You scored <b>"+this.score+"</b><br/><br/>";
+			
+			html+='You can check the <a href="/highscores">high scores</a> or <a href="/">play again</a> ;-)<br/><br/>';
+			
+			html+='Here are the tracks you listened to during this game:<br/><br/>';
+			
+			html+='<table>';
+			this.trackIds.each(function(id,i) {
+			
+				if (!data[id+""]) return;
+
+				data[id+""]["i"]=i+1;
+
+				html+=('<tr><td style="padding:3px;">#{i}</td><td style="padding:3px;"><a href="#{album_url}"><img src="#{album_image}" style="border:0;width:70px;height:70px;" /></a></td>'+
+						'<td style="padding:3px;"><b>#{artist_ahrefname}</b><br/>#{album_ahrefname}<br/>#{name}'+
+						'<br/><a href="http://www.jamendo.com/download/track/#{id}" target="_blank">Full track download</a> | <a href="http://www.jamendo.com/track/#{id}/share" target="_blank">Share</a> | <a href="#{license_url}" target="_blank">License</a>'+
+					'</td></tr>').interpolate(data[id+""]);
+			});
+			html+="</table>";
+			
+			$("superbox_credits_inner").innerHTML=html;
+			
+		}
+
+	},
+	
+	showCredits:function() {
+	
+		//display superbox
+		
+		SuperBox.call("localdiv","superbox_credits");
+		
+		var url="http://api.jamendo.com/get2/album_ahrefname+album_url+artist_ahrefname+album_image+name+id+license_url/track/jsoncallback/album_track+album_artist+license_track+idhash/?n=50&jsoncallbackfunction=Jamendo._currentGame.creditsCallback&id="+this.trackIds.join("+");
+		
+		//fetch the info about the tracks...
+		Jamendo.insertScript(url);
+		
+		//test
+		//Jamendo._currentGame.trackIds=[241,242]; Jamendo._currentGame.showCredits();
+	},
+	
 	pollreturn:function(data) {
 		try {
 		if (data.status=="ended" || data.status=="partnerquit") {
@@ -194,10 +242,9 @@ Jamendo.classes.MusicGame = Class.create({
 				}
 				
 			} else {
-				
-				if (confirm("Game ended! Score : "+data.score+"\n\n Do you want to see the high scores?")) {
-					window.location="/highscores";
-				}
+				this.score=data.score;
+
+				this.showCredits();
 			}
 				
 		} else if (data.status=="wait") {
@@ -264,6 +311,8 @@ Jamendo.classes.MusicGame = Class.create({
 		$("game_input").focus();
 		
 		this.trackId=trackId;
+		
+		this.trackIds.push(trackId);
 		
 		var offset=0;
 		

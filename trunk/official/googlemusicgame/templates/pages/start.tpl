@@ -99,4 +99,10 @@
 	</form>
 </div>
 
+<div id="superbox_credits" style="width:350px;height:400px;display:none;">
+	<div id="superbox_credits_inner">
+		Game ended! Please wait...
+	</div>
+</div>
+
 <div id="jamPlayerAudioInsert" style="position:absolute;visibility:visible;left:-100px;height:1px;width:1px;">&nbsp;</div>
