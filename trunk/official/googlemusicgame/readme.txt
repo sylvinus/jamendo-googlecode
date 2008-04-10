@@ -22,4 +22,4 @@ to update the files remotely:
 python2.5 /usr/local/google_appengine/appcfg.py update googlemusicgame/
 
 to launch the testserver:
-python2.5 /usr/local/google_appengine/dev_appserver.py googlemusicgame/
+python2.5 /usr/local/google_appengine/dev_appserver.py -a 0.0.0.0 googlemusicgame/
