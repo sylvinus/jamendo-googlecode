@@ -1,6 +1,14 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+
+
+
+
+
+
+######### Init
+
 import os,sys,re,time
 
 import logging
@@ -34,6 +42,15 @@ parser.add_option("-r", "--neverdeletefiles", action="store_true", dest="neverde
 (optionsattr, args) = parser.parse_args()
 
 ses=False
+
+
+
+
+
+
+
+
+######### Jamseeder functions
 
 
 def libtorrent_init():
@@ -101,21 +118,10 @@ def getStats():
 
 
 
-########
 
-def main():
- 
-    libtorrent_init()
-    
-    while True:
-        printAlerts()
-        
-        logger.info(getStats())
-    
-        time.sleep(5)
-        
-        sys.stdout.flush()
-    
+
+
+
 
 
 
@@ -142,3 +148,30 @@ def printAlerts():
         if type(a) != str:
             a = a.message()
         logger.info("%s" % a)
+
+
+
+
+
+
+
+
+
+
+
+######## main()
+
+ 
+
+if __name__ == "__main__":
+    
+    libtorrent_init()
+    
+    while True:
+        printAlerts()
+        
+        logger.info(getStats())
+    
+        time.sleep(5)
+        
+        sys.stdout.flush()
