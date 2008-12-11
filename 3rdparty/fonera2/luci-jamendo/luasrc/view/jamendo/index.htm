@@ -1,0 +1,26 @@
+<%boxcolor = "darkorange"%>
+<%+header%>
+<h2>Jamendo Radios</h2>
+<div id="jamendo_change_radio">    
+
+	<br/><br/>
+
+	<h3>Changer la radio</h3>
+	
+	<form id="jamendo_change_radio_form" method="get" action="<%=REQUEST_URI%>">
+		
+
+		<select onchange="document.getElementById('jamendo_change_radio_form').submit();" name="jamendo_radioid" id="jamendo_radioid" >
+			
+			<option value="lounge" <% if jamendo_radioid == "lounge" then selected = "selected" else selected="" end %> <%=selected%> >Lounge</option>
+			<option value="electro" <% if jamendo_radioid == "electro" then selected = "selected" else selected="" end %> <%=selected%> >Electro</option>
+			<option value="jazz" <% if jamendo_radioid == "jazz" then selected = "selected" else selected="" end %> <%=selected%> >Jazz</option>
+			<option value="pop" <% if jamendo_radioid == "pop" then selected = "selected" else selected="" end %> <%=selected%> >Pop</option>
+			<option value="instrumental" <% if jamendo_radioid == "instrumental" then selected = "selected" else selected="" end %> <%=selected%> >Instrumental</option>
+		
+		</select>
+		
+	</form>
+	
+</div>
+<%+footer%>
