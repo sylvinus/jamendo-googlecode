@@ -23,6 +23,7 @@ function jamendo()
 
 
 	-- Ugly but hey, this is a prototype ;)
+	-- http://pm2036.francofon.fr/fonera2.0/audio/README
 	sys.call("killall madplay")
 	sys.call("wget -O - http://m65.neofacto.lu:8000/" .. radioid .. ".mp3 | madplay - &")
 		

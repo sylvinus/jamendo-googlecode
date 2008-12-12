@@ -1,14 +1,20 @@
 <%boxcolor = "darkorange"%>
 <%+header%>
-<h2>Jamendo Radios</h2>
+
+<img style="float:right;" src="http://imgjam.com/orange%2Flogo%2Flogo_iphone.png" />
+
+<br/>
 <div id="jamendo_change_radio">    
 
 	<br/><br/>
-
-	<h3>Changer la radio</h3>
 	
 	<form id="jamendo_change_radio_form" method="get" action="<%=REQUEST_URI%>">
-		
+
+	
+		<div style="float:left;width:300px;">
+		<h2>Select a radio</h2>
+	
+		<br/>
 
 		<select onchange="document.getElementById('jamendo_change_radio_form').submit();" name="jamendo_radioid" id="jamendo_radioid" >
 			
@@ -19,8 +25,24 @@
 			<option value="instrumental" <% if jamendo_radioid == "instrumental" then selected = "selected" else selected="" end %> <%=selected%> >Instrumental</option>
 		
 		</select>
+
+		</div>
+		
+		<div style="margin-left:350px;">
+		
+			<h2>Settings</h2>
+			<div style="font-size:1.2em;">
+				<br/>
+				<input type="checkbox" name="jamendo_autostart" /> Start the radio automatically when the Fonera boots
+
+				<br/><br/>
+			</div>
+			
+		</div>
 		
 	</form>
+	
+
 	
 </div>
 <%+footer%>
