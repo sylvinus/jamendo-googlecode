@@ -1,0 +1,1 @@
+Moved to the fonosfera SVN, in branches/communities/jamendo
